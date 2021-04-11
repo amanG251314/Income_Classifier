@@ -19,8 +19,8 @@ def Cat2Num(dff):
     high_cardinality_nom = list(set(cat_nom) - set(low_cardinality_nom))
 
     # Ordinal & High Cardinality 'Label Encoder' otherwise OneHotEncoder
-    col_LE = col_ord + high_cardinality_nom
-    print(col_LE)
+    col_LE = cat_ord + high_cardinality_nom
+    ##print(col_LE)
     col_OHE = list(set(cat_col) - set(col_LE))
     df_LE = df1[col_LE].copy()
     df_num = df1[num_col].copy()
@@ -39,8 +39,8 @@ def Cat2Num(dff):
     return df_final, Encoders
 
 
-def asd(df):
-    df = df.rename(columns={'age': 'age',\
+def SpaceRemove(d):
+    d = d.rename(columns={'age': 'age',\
                             ' workclass': 'workclass',\
                             ' fnlwgt': 'final_weight',\
                             ' education': 'education',\
@@ -56,7 +56,7 @@ def asd(df):
                             ' native-country': 'native_country',\
                             ' income': 'income'})
 
-    return df
+    return d
 
 
 
